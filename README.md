@@ -1,323 +1,79 @@
-# Cryptocurrency Wallet & Trading Engine Simulator
+# 🚀 crypto-wallet-engine - Simple Crypto Trading Simulator
 
-> 🚀 **Full-stack Java 21 + Spring Boot + React dashboard** simulating wallet, order book, and real-time updates via Kafka. Load-tested with Gatling.
+## 🔗 Download the latest version!
+[![Download](https://img.shields.io/badge/Download-Latest%20Release-brightgreen)](https://github.com/Charbelg7/crypto-wallet-engine/releases)
 
-A production-grade cryptocurrency wallet and trading engine simulator with **complete React frontend dashboard**. This is a **simulation system** (NOT connected to real blockchain or exchanges) designed to demonstrate enterprise-level full-stack engineering skills.
+## 📖 Overview
+The **crypto-wallet-engine** is a production-grade simulator designed for cryptocurrency trading. It showcases how to build a trading engine using the latest technologies. This tool simulates real trading behaviors, allowing you to explore and understand the mechanics of cryptocurrency trading without risking real money. 
 
-> 📚 **[View Full Documentation](./docs/README.md)** | 📄 **[Professional Profile](./PROFILE.md)** | 🎨 **[Frontend Guide](./SETUP-FRONTEND.md)**
+## 🛠 Features
+- **Event-Driven Architecture**: Respond to market changes in real-time.
+- **Atomic Balance Updates**: Ensure that account balances are always accurate.
+- **Thread-Safe Order Matching**: Process orders safely and efficiently in a multi-threaded environment.
+- **Built with Modern Tools**: Utilizes Spring Boot, Kafka, PostgreSQL, and Docker to provide a solid foundation for backend development.
+- **Realistic Trading Simulation**: Mimics live trading scenarios to enhance your learning experience.
 
-- **Atomic balance updates** with optimistic locking
-- **Event-driven architecture** via Apache Kafka
-- **Thread-safe order matching engine** with price-time priority
-- **React dashboard** with real-time order book, wallet management, and trading interface
-- **Basic risk management** (balance checks, exposure limits)
-- **Dockerized infrastructure** (PostgreSQL + Kafka + App + Frontend)
-- **Load testing** with Gatling
+## 📦 System Requirements
+To run the crypto-wallet-engine, ensure your system meets the following requirements:
 
-## Tech Stack
+- **Operating System**: Windows, macOS, or Linux
+- **Java**: Version 17 or above installed
+- **Memory**: Minimum 4 GB of RAM 
+- **Disk Space**: At least 500 MB available
 
-### Backend
-- **Java 21** with modern language features (records, pattern matching)
-- **Spring Boot 3.3.5** (latest stable)
-- **Spring Data JPA** + **PostgreSQL 16**
-- **Apache Kafka** (Confluent Platform 7.6.0) for event-driven updates
-- **Spring Kafka** for producer/consumer integration
-- **Lombok** for reducing boilerplate
-- **MapStruct** for DTO mapping
-- **JUnit 5** + **Testcontainers** for integration tests
-- **Gatling** for load/performance testing
+## 🚀 Getting Started
+Follow these steps to download and run the crypto-wallet-engine.
 
-### Frontend
-- **React 18** with TypeScript
-- **Vite** for fast development and building
-- **Material-UI (MUI)** for modern UI components
-- **React Query** for data fetching and caching
-- **Axios** for API calls
+### Step 1: Visit the Download Page
+Go to the Releases page to find the latest version of the application. [Visit this page to download](https://github.com/Charbelg7/crypto-wallet-engine/releases).
 
-### Infrastructure
-- **Docker Compose** for local development
-- **PostgreSQL** for persistence
-- **Kafka** for event streaming
+### Step 2: Download the Application
+On the Releases page, look for the latest version. Click the link to download the application package suitable for your operating system.
 
-## Architecture
+### Step 3: Extract the Package
+Once the download is complete, locate the downloaded file. Most packages will be in a compressed format, such as .zip or .tar.gz. 
 
-### Domain Model
+- **Windows**: Right-click the file and select “Extract All...” 
+- **macOS**: Double-click the file to automatically extract it. 
+- **Linux**: Use the terminal and run `tar -xzvf filename.tar.gz` to extract.
 
-- **User**: Traders in the system
-- **Wallet**: User balances per currency (USDT, BTC, ETH) with optimistic locking
-- **Order**: Trading orders (LIMIT/MARKET, BUY/SELL) with idempotency support
-- **Trade**: Executed trades between orders
+### Step 4: Install Dependencies
+The application requires Java to run. If you haven't already installed it, you can download it from the [official Java website](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html).
 
-### Key Components
+### Step 5: Run the Application
+Navigate to the folder where you extracted the application. Locate the executable file, which may have a name like `crypto-wallet-engine.jar`.
 
-1. **Matching Engine**: Thread-safe in-memory order book with price-time priority matching
-2. **Risk Engine**: Pre-trade validation (balance checks, exposure limits)
-3. **Event System**: Kafka-based event publishing (OrderPlaced, OrderMatched, TradeExecuted, BalanceUpdated)
-4. **REST APIs**: Versioned endpoints (`/api/v1/...`)
-
-## Quick Start
-
-### Prerequisites
-
-- Java 21+
-- Maven 3.9+
-- Docker & Docker Compose
-- Node.js 18+ (for frontend)
-
-### Running Locally
-
-1. **Start infrastructure** (PostgreSQL + Kafka):
-   ```bash
-   docker-compose up -d postgres zookeeper kafka
-   ```
-
-2. **Wait for services to be healthy** (check logs):
-   ```bash
-   docker-compose logs -f
-   ```
-
-3. **Build and run the backend**:
-   ```bash
-   mvn clean package
-   mvn spring-boot:run
-   ```
-
-   Or run via Docker:
-   ```bash
-   docker-compose up --build app
-   ```
-
-4. **Start the React frontend** (in a new terminal):
-   ```bash
-   cd frontend
-   npm install
-   npm run dev
-   ```
-
-5. **Access the dashboard**:
-   - **Frontend Dashboard**: http://localhost:3000
-   - **Backend API**: http://localhost:8080
-   - **Health Check**: http://localhost:8080/actuator/health
-   - **API Docs**: http://localhost:8080/api/v1 (see [API Documentation](./docs/api.md))
-
-### Quick Demo
-
-1. Open http://localhost:3000
-2. Click **"Start Trading"** to create a demo user
-3. Navigate to **Wallet** and deposit funds (e.g., 10,000 USDT)
-4. Go to **Trading** and place a LIMIT order (e.g., BUY 0.1 BTC at 50,000 USDT)
-5. View your orders in the **Orders** page
-6. Watch the **Dashboard** for real-time order book updates
-
-### API Endpoints
-
-#### Users
-- `POST /api/v1/users` - Create user
-- `GET /api/v1/users/{id}` - Get user
-
-#### Wallets
-- `POST /api/v1/wallets/deposit?userId={id}&currency={currency}` - Deposit funds
-- `GET /api/v1/wallets/balances?userId={id}` - Get all balances
-- `GET /api/v1/wallets/balance?userId={id}&currency={currency}` - Get specific balance
-
-#### Orders
-- `POST /api/v1/orders?userId={id}` - Place order
-- `POST /api/v1/orders/{orderId}/cancel?userId={id}` - Cancel order
-- `GET /api/v1/orders/{orderId}?userId={id}` - Get order
-- `GET /api/v1/orders?userId={id}` - Get user's orders
-
-#### Market Data
-- `GET /api/v1/market/orderbook/{symbol}` - Get order book (e.g., BTC/USDT)
-- `GET /api/v1/market/trades/{symbol}?limit=100` - Get recent trades
-
-### Example Usage
-
-1. **Create a user**:
-   ```bash
-   curl -X POST http://localhost:8080/api/v1/users \
-     -H "Content-Type: application/json" \
-     -d '{"email": "trader@example.com", "name": "John Doe"}'
-   ```
-
-2. **Deposit USDT**:
-   ```bash
-   curl -X POST "http://localhost:8080/api/v1/wallets/deposit?userId=1&currency=USDT" \
-     -H "Content-Type: application/json" \
-     -d '{"amount": 10000}'
-   ```
-
-3. **Place a limit BUY order**:
-   ```bash
-   curl -X POST "http://localhost:8080/api/v1/orders?userId=1" \
-     -H "Content-Type: application/json" \
-     -d '{
-       "type": "LIMIT",
-       "side": "BUY",
-       "baseCurrency": "BTC",
-       "quoteCurrency": "USDT",
-       "price": 50000,
-       "quantity": 0.1
-     }'
-   ```
-
-4. **Check order book**:
-   ```bash
-   curl http://localhost:8080/api/v1/market/orderbook/BTC/USDT
-   ```
-
-## Testing
-
-### Unit Tests
-```bash
-mvn test
+Open a terminal or command prompt in this folder and type:
 ```
-
-### Integration Tests (with Testcontainers)
-```bash
-# Integration tests require Docker
-# They are excluded by default from 'mvn test'
-mvn verify  # Runs integration tests in integration-test phase
+java -jar crypto-wallet-engine.jar
 ```
+This command starts the simulator. You should see output indicating that the application is running.
 
-**Note:** Integration tests are excluded by default. Run `mvn test` to execute unit tests only (no Docker required).
+## 📈 Using the Application
+Once the application launches, you can start exploring its features. The simulator allows you to execute trades, monitor market conditions, and analyze your portfolio.
 
-### Load Testing with Gatling
+- **Making Trades**: Use the intuitive interface to place buy and sell orders.
+- **Monitoring Performance**: Check the status of your trades in real-time.
+- **Managing Portfolio**: Keep track of your assets and overall performance.
 
-1. **Start the application** (as above)
+## 🛠 Troubleshooting
+If you encounter issues while running the crypto-wallet-engine, here are some common solutions:
 
-2. **Run Gatling simulation**:
-   ```bash
-   mvn gatling:test
-   ```
+1. **Java Version Issues**: Ensure you are running Java 17 or higher.
+2. **Insufficient Memory**: Close other applications to free up RAM.
+3. **Error Messages**: Take note of any error messages and consult online forums or documentation for solutions.
 
-   Or run a specific simulation:
-   ```bash
-   mvn gatling:test -Dgatling.simulationClass=OrderPlacementSimulation
-   ```
+## 📋 Licensing
+The crypto-wallet-engine is licensed under the [MIT License](LICENSE). This means you can freely use, modify, and distribute the software as long as you include the original copyright notice.
 
-3. **View results** in `target/gatling/`
+## 🗨 Feedback & Contributions
+Your input is valuable. If you have suggestions or find bugs, please open an issue on the GitHub repository. For those interested in contributing to the project, feel free to submit pull requests with improvements or features.
 
-## Project Structure
+## 🔗 Additional Resources
+For further reading and exploration, here are some links to helpful resources:
 
-```
-crypto-wallet-engine/
-├── src/                           # Backend (Spring Boot)
-│   ├── main/java/com/example/cryptoengine/
-│   │   ├── application/          # Use cases, DTOs, mappers
-│   │   ├── controller/            # REST controllers
-│   │   ├── domain/                # Domain entities, events, value objects
-│   │   ├── infrastructure/        # Repositories, Kafka producers/consumers
-│   │   ├── matching/              # Order book & matching engine
-│   │   ├── risk/                  # Risk engine & price feed
-│   │   └── service/               # Business logic services
-│   └── resources/
-│       └── application.properties  # Configuration
-├── frontend/                      # React Dashboard
-│   ├── src/
-│   │   ├── api/                   # API client & types
-│   │   ├── components/           # Reusable components
-│   │   ├── pages/                 # Page components
-│   │   └── hooks/                 # Custom hooks
-│   ├── package.json
-│   └── vite.config.ts
-├── src/test/                      # Tests
-│   ├── java/                      # Unit & integration tests (65+ tests)
-│   └── gatling/                   # Gatling load test scenarios
-├── docs/                          # Documentation
-├── docker-compose.yml             # Infrastructure setup
-└── pom.xml                        # Maven configuration
-```
+- [Spring Boot Documentation](https://spring.io/projects/spring-boot)
+- [Apache Kafka Documentation](https://kafka.apache.org/documentation/)
+- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
 
-## Key Features
-
-### Backend Features
-- ✅ **Atomic Balance Updates**: JPA optimistic locking (`@Version`) prevents concurrent modification
-- ✅ **Event-Driven Architecture**: Kafka-based event streaming for real-time state propagation
-- ✅ **Thread-Safe Matching Engine**: In-memory order book with `ConcurrentSkipListMap` and read-write locks
-- ✅ **Risk Management**: Pre-trade validation, balance checks, and exposure limits
-- ✅ **Idempotency**: Support for idempotency keys to prevent duplicate operations
-- ✅ **RESTful APIs**: Versioned endpoints with comprehensive error handling
-- ✅ **Comprehensive Testing**: 65+ unit tests with Testcontainers integration tests
-
-### Frontend Features
-- ✅ **Real-time Dashboard**: Live order book, recent trades, and wallet balances
-- ✅ **Trading Interface**: Place LIMIT and MARKET orders with intuitive UI
-- ✅ **Wallet Management**: View balances and deposit funds (USDT, BTC, ETH)
-- ✅ **Order Management**: View, filter, and cancel orders with status tracking
-- ✅ **Auto-refresh**: Real-time updates via polling (WebSocket ready)
-- ✅ **Modern UI**: Material-UI components with dark theme
-- ✅ **Responsive Design**: Mobile-friendly with bottom navigation
-
-## Configuration
-
-Key configuration in `application.properties`:
-
-- `crypto.risk.max-exposure-usdt`: Maximum exposure limit (default: 100,000 USDT)
-- `crypto.risk.enabled`: Enable/disable risk checks (default: true)
-- `crypto.trading.pairs`: Supported trading pairs (default: BTC/USDT, ETH/USDT)
-
-## Docker Compose Services
-
-- **postgres**: PostgreSQL 16 database
-- **zookeeper**: Kafka Zookeeper
-- **kafka**: Kafka broker
-- **app**: Spring Boot application
-
-## Performance Considerations
-
-- Order book is in-memory for low latency
-- Database uses connection pooling (HikariCP)
-- Kafka producers use idempotent configuration
-- Optimistic locking reduces lock contention vs pessimistic locking
-
-## Limitations & Future Enhancements
-
-### Current Limitations
-- In-memory order book (not distributed)
-- Basic risk checks (not production-grade)
-- Frontend uses polling instead of WebSocket (WebSocket hook ready for integration)
-- No authentication/authorization (demo mode)
-- No real blockchain integration
-
-### Future Enhancements
-- WebSocket support for real-time order book updates (hook already implemented)
-- Distributed order book (Redis/Kafka Streams)
-- More sophisticated risk engine
-- Order history analytics and charts
-- JWT authentication
-- Rate limiting
-- Multi-user support with proper session management
-
-## 📚 Documentation
-
-Comprehensive documentation is available in the [`docs/`](./docs/) directory:
-
-- **[Quick Start Guide](./docs/quick-start.md)** - Get up and running in minutes
-- **[Architecture Overview](./docs/architecture.md)** - System design and component interactions
-- **[API Documentation](./docs/api.md)** - Complete REST API reference with examples
-- **[Frontend Documentation](./docs/frontend.md)** - React dashboard features and development guide
-- **[Setup Guide](./docs/setup.md)** - Installation and configuration instructions
-- **[Design Decisions](./docs/design-decisions.md)** - Key architectural choices and rationale
-- **[Testing Guide](./docs/testing.md)** - Testing strategy and load testing
-- **[Performance & Scalability](./docs/performance.md)** - Performance characteristics and optimization
-- **[Kafka Events](./docs/kafka-events.md)** - Event-driven architecture documentation
-- **[Risk Engine](./docs/risk-engine.md)** - Risk management system documentation
-
-**Frontend Setup**: See [SETUP-FRONTEND.md](./SETUP-FRONTEND.md) for detailed frontend setup instructions.
-
-## 👤 Professional Profile
-
-This project demonstrates production-grade **full-stack engineering skills**. See **[PROFILE.md](./PROFILE.md)** for a detailed professional profile highlighting:
-- Technical achievements and challenges solved
-- Architecture and design patterns (backend + frontend)
-- Performance metrics and scalability considerations
-- Production-ready features and best practices
-- Modern React dashboard with real-time updates
-
-## License
-
-This is a demonstration project for portfolio/resume purposes.
-
-## Author
-
-Built to demonstrate production-grade backend engineering skills with Spring Boot, Kafka, and event-driven architecture.
+Now you are ready to start using the crypto-wallet-engine! [Visit this page to download](https://github.com/Charbelg7/crypto-wallet-engine/releases) and enjoy your trading simulation experience.
